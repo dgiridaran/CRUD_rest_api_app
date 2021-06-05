@@ -11,7 +11,7 @@ from resources.store import Store,StoreList
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///my_data.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgresql://aznxgvsytfhige:686bd9aa22e414db10ef2b101ec2b84fe782bfa46d147933745e46b981edc1cc@ec2-34-232-191-133.compute-1.amazonaws.com:5432/d1v9748i01luna','sqlite:///my_data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False #This to turn off the flask modification tracker.But still the sqlalchamy modification tracker workes,which is better.
 app.secret_key = 'giri' #This is the signature in the JWT ,So it should be long and secret.
 api = Api(app)
